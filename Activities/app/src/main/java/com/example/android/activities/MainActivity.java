@@ -20,16 +20,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(MainActivity.this, imageView, ViewCompat.getTransitionName(imageView));
                 startActivity(intent, options.toBundle());
+
             }
         });
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        System.gc();
-        System.exit(0);
     }
 }

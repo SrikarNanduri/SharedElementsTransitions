@@ -24,10 +24,13 @@ public class DetailsActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
+                /*Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(DetailsActivity.this, imageView, ViewCompat.getTransitionName(imageView));
-                startActivity(intent, options.toBundle());
+                startActivity(intent, options.toBundle());*/
+                DetailsActivity.this.onBackPressed();
+
             }
         });
 
